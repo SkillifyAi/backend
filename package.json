@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Testing"\ && exit 0",
+    "test": "mocha",
     "start": "nodemon app.js"
   },
   "keywords": [],
@@ -27,6 +27,7 @@
     "nodemon": "^2.0.22",
     "openai": "^3.2.1",
     "stripe": "^12.2.0",
-    "twilio": "^4.10.0"
+    "twilio": "^4.10.0",
+    "mocha": "^10.2.0",
   }
 }
