@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "Testing && exit 0",
     "start": "nodemon app.js"
   },
   "keywords": [],
