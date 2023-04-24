@@ -43,11 +43,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
 
 /**
  * -------------- ROUTES ----------------
@@ -61,5 +56,6 @@ app.use(require('./routes'));
  * -------------- SERVER ----------------
  */
 
-// Server listens on http://localhost:5000
-app.listen(process.env.PORT);
+
+const port = process.env.PORT || 5000
+app.listen(port);
