@@ -100,7 +100,7 @@ const handleCheckout = async (req, res, next) => {
               user.planNumber = -1
               user.alternativePlans = -1
             }
-            user.customerId = session.id
+            user.customerId = session.customer
             await user.save()
           
           break;
@@ -119,6 +119,7 @@ const handlePortal = async (req, res) => {
     const user = await User.findOne({email: req.body.email})
     
     const customerId = user.customerId
+
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: customerId,
     })

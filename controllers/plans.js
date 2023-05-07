@@ -101,6 +101,7 @@ const deletePlan = async (req, res) => {
         const user = await User.findById(req.userId)
         const plan = await Plan.findOne({user: req.userId, skill: req.params.id})
         console.log(plan.completed);
+        
         if(user.alternativePlans == 0 && !plan.completed)
             return res.status(403).json({succes:false, error: "You can`t delete any more plans this month"})
         
