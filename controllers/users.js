@@ -57,6 +57,8 @@ const handleGoogleLogin = async (req, res , next) => {
                 httpOnly: true,
                 secure: false
             })
+            user.image = req.body.picture
+            await user.save()
             return res.status(200).json({succes: true, user: user})
         }
         const newUser = new User({
