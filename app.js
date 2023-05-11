@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
+require('dotenv').config()
 
 // const passport = require('passport');
 
@@ -36,8 +37,9 @@ app.use(express.urlencoded({extended: true}));
 
 // Allows our Angular application to make HTTP requests to Express application
 
+
 const corsOptions = {
-    origin: 'skillify-api.azurewebsites.net',
+    origin: process.env.FRONTEND_URL,
     credentials: true
 };
 
