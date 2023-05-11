@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const pathToPubKey = path.join(__dirname, '..', 'id_rsa_pub.pem');
 
-const PRIV_KEY = process.env.PRIV_KEY
+const PRIV_KEY_SECRET = process.env.PRIV_KEY
 const PUB_KEY = fs.readFileSync(pathToPubKey, 'utf8');
 
 const mongoose = require('mongoose');
@@ -68,7 +68,7 @@ function issueJWT(user) {
   };
         
 
-  const signedToken = jsonwebtoken.sign(payload, PRIV_KEY, { expiresIn: expiresIn, algorithm: 'RS256' });
+  const signedToken = jsonwebtoken.sign(payload, PRIV_KEY_SECRET, { expiresIn: expiresIn, algorithm: 'RS256' });
 
   return {
     token: "Bearer " + signedToken,
