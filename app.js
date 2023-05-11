@@ -37,7 +37,7 @@ app.use(express.urlencoded({extended: true}));
 // Allows our Angular application to make HTTP requests to Express application
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'skillify-api.azurewebsites.net',
     credentials: true
 };
 

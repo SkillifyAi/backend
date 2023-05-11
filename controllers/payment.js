@@ -23,8 +23,8 @@ const createCheckout =  async (req, res) => {
                     quantity: 1,
                 }
             ],
-            success_url: 'http://localhost:3000/payment-succes',
-            cancel_url: 'http://localhost:3000/pricing'
+            success_url: 'skillify-api.azurewebsites.net/payment-succes',
+            cancel_url: 'skillify-api.azurewebsites.net/pricing'
         })
         res.status(200).json({succes: true, url: session.url})
     } catch (err) {

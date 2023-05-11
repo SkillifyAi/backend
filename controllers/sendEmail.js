@@ -97,7 +97,7 @@ const sendEmail = async (userEmail, username, resetToken) => {
                         <td align="center" style="color: black; font-size: 16px;">
                         Dear ${username}<br><br>
                         Please click the link below to reset your password:<br><br>
-                        <a style="background-color: #f78000; border-radius: 10px; padding: 20px; font-weight: 700; color: white; text-decoration: none;" href = "http://localhost:3000/reset-password/${resetToken}">Password reset</a><br><br>
+                        <a style="background-color: #f78000; border-radius: 10px; padding: 20px; font-weight: 700; color: white; text-decoration: none;" href = "skillify-api.azurewebsites.net/reset-password/${resetToken}">Password reset</a><br><br>
                         Skillify Ai
                         </td>
                     </tr>
