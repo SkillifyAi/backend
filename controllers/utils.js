@@ -4,11 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const base64url = require('base64url');
 const moment = require('moment');
+require("dotenv").config();
 
-const pathToKey = path.join(__dirname, '..', 'id_rsa_priv.pem');
+
 const pathToPubKey = path.join(__dirname, '..', 'id_rsa_pub.pem');
 
-const PRIV_KEY = fs.readFileSync(pathToKey, 'utf8');
+const PRIV_KEY = process.env.PRIV_KEY
 const PUB_KEY = fs.readFileSync(pathToPubKey, 'utf8');
 
 const mongoose = require('mongoose');
